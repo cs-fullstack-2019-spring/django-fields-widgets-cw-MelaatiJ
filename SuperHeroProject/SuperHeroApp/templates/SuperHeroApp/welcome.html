@@ -1,0 +1,10 @@
+{% extends 'SuperHeroApp/index.html' %}
+
+{% block content %}
+<h1>So you want to be a SuperHero?? </h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Save The World</button>
+</form>
+{% endblock content %}

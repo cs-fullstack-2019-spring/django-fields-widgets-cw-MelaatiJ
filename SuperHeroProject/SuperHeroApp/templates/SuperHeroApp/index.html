@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block header %}
+<h1> Welcome Super Heros!! </h1>
+{% endblock header %}
+
+
+{% block content %}
+<h2>Lets Kick Some Villian Butt nand protect the city, but first....apply <a href="{% url 'welcome' %}">here</a> </h2>
+{% endblock content %}
+
+{% block footer %}
+<h1>Thankyou for your time and will to change this city</h1>
+{% endblock footer %}
+
+
+<h1>So you want to be a SuperHero?? </h1>
+<form action="{% url 'thankYou' %}"  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Save The World</button>
+</form>
+</body>
+</html>
